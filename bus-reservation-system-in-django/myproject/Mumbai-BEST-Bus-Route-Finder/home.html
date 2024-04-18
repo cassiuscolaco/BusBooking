@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mumbai Bus Route Finder App</title>
+    <style>
+        * {font-size:40px;font-family:Timesnewroman;font-weight:bold;}
+     
+	h1{font-size:60px;background-color:black;color:white;width:85%;border-radius:50px;}
+	textarea{resize:none;}
+	h2{color:blue;}
+    </style>
+    <script>
+        const resultText = document.querySelector('.result');
+    	if (resultText.textContent.trim() !== '') {
+        	resultText.classList.add('show');
+	}
+    </script>
+    
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <center>
+        <h1>Mumbai BEST Bus Route Finder</h1>
+	<h3> Raj Pawar (03190923) </h3>
+        <form method="POST">
+	{% csrf_token %}
+<br>
+
+<br><br>
+            <input type="text" name="route" placeholder="enter route number between 1 to 57 " style="width:780px;"><br><br>
+            <input type="submit" value="FIND">
+        </form><br>
+        <h2 class="result">{{ msg }}</h2>	
+    </center>
+</body>
+</html>
